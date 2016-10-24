@@ -36,7 +36,7 @@ MAX_EMAIL_LENGTH = 128
 REQUIRE_UNIQUE_EMAIL = False
 
 # Application definition
-DELIVERY_ARCHIVE_DIR = '/tmp/deliveries'
+DELIVERY_ARCHIVE_DIR = os.path.join(BASE_DIR, "deliveries")
 
 
 INSTALLED_APPS = (
@@ -68,7 +68,7 @@ WSGI_APPLICATION = 'caracole.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/fabien/src/caracole/database.sqlite3'
+        'NAME': '/home/roco/caracole/database.sqlite3'
     }
 }
 

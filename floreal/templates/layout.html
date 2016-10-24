@@ -2,7 +2,7 @@
 {% load static %}
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>Circuits courts Caracole</title>
+    <title>Floréal Pavillons</title>
     <link href="{% static 'layout/common.css' %}" rel="stylesheet" type="text/css" />
     <link href="{% static 'layout/default.css' %}" rel="stylesheet" type="text/css" />
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
@@ -13,8 +13,8 @@
   <body>
     <div id="wrapper">
       <div id="logo">
-        <h1><a href='{% url "index" %}'>Circuits Courts Caracole</a></h1>
-        <h2>Gestion associative de commandes en circuits courts</h2>
+        <h1><a href='{% url "index" %}'>Floréal Pavillons</a></h1>
+        <h2>Gestion de commandes en circuit court</h2>
       </div>
       <!-- start page -->
       <div id="page">
@@ -26,7 +26,7 @@
         <!-- start sidebar -->
         <div id="sidebar">
           {% if user.is_anonymous %}
-          <em>Non conneté</em>
+          <em>Non connecté</em>
           {% else %}
           Connecté comme<br/>
           <em>{{user.first_name}} {{user.last_name}}</em>.
@@ -40,8 +40,10 @@
             {% endif %}
             {% endif %}
             <li><a href="{% url 'index' %}">Page d'accueil</a></li>
+<!--
             <li><a href="{% url 'charte' %}">La Charte Caracole</a></li>
             <li><a href="http://caracole.le-pic.org/index.php">Caracole</a></li>
+-->
           </ul>
         </div>
         <!-- end sidebar -->
@@ -62,4 +64,3 @@
     </div>
   </body>
 </html>
-  

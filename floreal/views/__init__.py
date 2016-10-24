@@ -31,7 +31,6 @@ from floreal.views import require_phone_number as phone
 def index(request):
     """Main page: list deliveries open for ordering as a user, networks for which the user is full admin,
      and orders for which he has subgroup-admin actions to take."""
-
     user = request.user
 
     SUBGROUP_ADMIN_STATES = [m.Delivery.ORDERING_ALL, m.Delivery.ORDERING_ADMIN, m.Delivery.FROZEN, m.Delivery.REGULATING]
@@ -178,8 +177,8 @@ def validate_candidacy_without_checking(request, candidacy, response, send_confi
                 u"Si cette décision vous surprend, contactez les administrateurs du réseau: %s" % (
             u", ".join(cd.subgroup.network.staff.all()),)
 
-    mail += u"\n\nCordialement, le robot du site de commande des Circuits Courts Caracole."
-    title = u"[caracole] Votre demande d'inscription au circuit court "+cd.subgroup.network.name
+    mail += u"\n\nCordialement, le robot du site de commande des Circuits Courts Floréal Pavillons."
+    title = u"[floréal pavillons] Votre demande d'inscription au circuit court "+cd.subgroup.network.name
     if send_confirmation_mail:
         send_mail(subject=title, message=''.join(mail), from_email=settings.EMAIL_HOST_USER, recipient_list=[cd.user.email],
                   fail_silently=True)
@@ -413,4 +412,3 @@ def view_history(request):
     orders = [(nw, od) for (nw, od) in orders if od.price > 0]  # Filter out empty orders
     vars = {'user': request.user, 'orders': orders}
     return render_to_response("view_history.html", vars)
-

@@ -112,12 +112,13 @@ def delivery_description(delivery, subgroups, **kwargs):
         for j, pd in enumerate(products):
             pd_totals_list.append(pd_totals[pd])
         for k, u in enumerate(sg.sorted_users):
-            order = orders[u]
-            user_records.append({
-                'user': u,
-                'orders': order,
-                'price': sum(pc.price for pc in order.purchases if pc),
-                'weight': sum(pc.weight for pc in order.purchases if pc)})
+            if u in orders :
+                order = orders[u]
+                user_records.append({
+                    'user': u,
+                    'orders': order,
+                    'price': sum(pc.price for pc in order.purchases if pc),
+                    'weight': sum(pc.weight for pc in order.purchases if pc)})
         sg_item['price'] = sum(uo['price'] for uo in user_records)
         sg_item['weight'] = sum(uo['weight'] for uo in user_records)
 

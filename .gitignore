@@ -11,3 +11,4 @@ deliveries/*
 caracole/config/*
 !caracole/config/template.py
 !caracole/config/__init__.py
+notes/*

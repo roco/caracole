@@ -15,7 +15,7 @@ ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
 
 configs = {
     '/home/roco/caracole/caracole': 'roco',
-    '/path/to/prod/project': 'prod',
+    '/home/florealpavillons/circuit-court/caracole': 'prod',
 }
 
 # Import the configuration settings file

@@ -83,7 +83,7 @@ def _make_sheet(book, title, fmt, buyers, products, purchases, purchase_fmls=Non
     else:
         # In subgroup sheets, recopy product descriptions from 1st page
         for c, pd in enumerate(products):
-            fml = "=%(nw)s!%(col)s%%s" % {'nw': products[0].delivery.network.name,
+            fml = "='%(nw)s'!%(col)s%%s" % {'nw': products[0].delivery.network.name,
                                           'col': _col_name(c+COL_OFFSET)}
             sheet.write(2, c+COL_OFFSET, fml % 3, fmt['pd_name'], _u8(pd.name))
             sheet.write(3, c+COL_OFFSET, fml % 4, fmt['hdr_price'], pd.price)

@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block head %}
+
 {% if table|length > 1 %}
     <script type='text/javascript'>
       var DISPLAYED_SUBGROUPS = [ {% for sgr in table %}{{sgr.subgroup.id}}, {% endfor %}];
@@ -114,7 +115,7 @@
 
     {% if sgr.price > 0 %}{# if there is at least one purchase for that subgroup #}
     {% for ur in sgr.users %}{# each subgroup user's row #}
-    {% if ur.price > 0 %}{# this user made some purchases #}
+    {% if ur.price > 0 or ur.price < 0  %}{# this user made some purchases, maybe negative as an extra user #}
     <tr class="user_row subgroup_{{sgr.subgroup.id}}_user_row {% cycle 'one' 'two' 'three' 'four' %}">
         <th class="left">{{ur.user.first_name}} {{ur.user.last_name}}</th>
         <td class="price">{{ur.price|price}}</td>

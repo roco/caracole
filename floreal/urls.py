@@ -61,12 +61,14 @@ urlpatterns = patterns('',
     url(r'^sg-(?P<subgroup>[^./]+)/phones$', views.view_phones, name='phones_subgroup'),
 
     url(r'^history$', views.view_history, name='view_history'),
+    url(r'^journal$', views.journal, name='view_journal'),
     url(r'^charte.html$', TemplateView.as_view(template_name='charte.html'), name='charte'),
 
     url(r'^admin/', include(admin.site.urls), name='admin'),
 
     url(r'^accounts/register$', views.user_register, name="user_register"),
     url(r'^accounts/registration_post.html$', views.user_register_post, name="registration_post"),
+    url(r'^accounts/password/reset', views.password_reset, name="password_reset"),
     url(r'^accounts/', include('registration.backends.simple.urls')),
 
     url(r'^add-phone-number/(?P<phone>[^./]+)$', views.phone.add_phone_number, name="add_phone_number"),

@@ -83,7 +83,7 @@ Cycle de vie d'une livraison
 6. quand tous les groupes sont régularisés, il prépare la commande,
    d'après la source qu'il préfère (page web, tableau Excel, fiches
    PDF).
-7. après livraison, il demande aux responsables de sous-groupe de
+7. après livraison, il demande aux coordinateurs de sous-groupe de
    s'assurer qu'ils ont bien finalisé la commande, c'est-à-dire qu'ils
    ont reporté sur le site tous les éventuels changements de dernière
    minute.

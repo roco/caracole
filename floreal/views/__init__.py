@@ -166,7 +166,7 @@ def validate_candidacy_without_checking(request, candidacy, response, send_confi
         if cd.subgroup.network.delivery_set.filter(state=m.Delivery.ORDERING_ALL).exists():
             mail += u"Une commande est actuellement en cours, dépêchez vous de vous connecter sur le site pour y participer !"
         else:
-            mail += u"Vos responsables de sous-groupe vous préviendront par mail quand une nouvelle commande sera ouverte."
+            mail += u"Vos coordinateurs de sous-groupe vous préviendront par mail quand une nouvelle commande sera ouverte."
     elif adm:  # Negative response from an admin
         mail += u"Votre demande d'adhésion au sous-groupe %s du réseau %s a été refusée par %s. " \
                 u"Si cette décision vous surprend, ou vous semble injustifiée, veuillez entrer en contact par " \

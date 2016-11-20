@@ -108,7 +108,8 @@ em { font-style: normal; color: #811305; font-weight: bold; }
     color:            white;
     background-color: #811305;
     font-weight:      bold;
-    border:           5px outset #a75a50;
+    border:           none;
+    padding: 		  5px;
     margin:           10px;
 }
 
@@ -120,6 +121,9 @@ em { font-style: normal; color: #811305; font-weight: bold; }
 
 table { border-collapse: collapse; }
 table.with-border td, table.with-border th { border: 1px solid #811305; }
+
+#products-table td { border: 1px solid #ccc; padding: 2px; }
+#products-table td input { border: none; padding: 2px; }
 
 td.blank { border: none !important; }
 th { color: #811305; padding-left: 10px; padding-right: 10px; }
